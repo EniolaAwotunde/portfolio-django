@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+    --bg: #faf8f4;
+    --card-bg: #ffffff;
+    --text: #1c2333;
+    --muted: #6b7280;
+    --navy: #10192e;
+    --navy-hover: #1c2847;
+    --gold: #b8860b;
+    --border: #e8e4dc;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 44px;
+    padding: 22px 0;
+    background-color: var(--navy);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav a {
+    color: #f4f1ea;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+/* Page container */
+.container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 70px 24px;
+}
+
+/* Headings */
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--navy);
+}
+
+.subtitle {
+    color: var(--muted);
+    font-size: 17px;
+    margin-bottom: 48px;
+    font-style: italic;
+}
+
+/* Project cards */
+.project-card {
+    background: var(--card-bg);
+    padding: 32px;
+    margin-bottom: 28px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    transition: box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    box-shadow: 0 10px 30px rgba(16,25,46,0.08);
+}
+
+.project-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    margin: 0 0 12px 0;
+    color: var(--navy);
+}
+
+.project-card p {
+    color: var(--muted);
+    margin: 0 0 14px 0;
+}
+
+.links a {
+    display: inline-block;
+    margin-right: 12px;
+    padding: 9px 20px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.links a.primary {
+    background: var(--navy);
+    color: white;
+}
+
+.links a.primary:hover {
+    background: var(--navy-hover);
+}
+
+.links a.secondary {
+    background: transparent;
+    color: var(--navy);
+    border: 1px solid var(--navy);
+}
+
+.links a.secondary:hover {
+    background: var(--navy);
+    color: white;
+}
+
+/* About page */
+.about-text p {
+    margin-bottom: 22px;
+    font-size: 16.5px;
+}
+
+/* Contact form */
+form p {
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    color: var(--navy);
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    background: white;
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+}
+
+button[type="submit"] {
+    background: var(--navy);
+    color: white;
+    border: none;
+    padding: 13px 32px;
+    border-radius: 3px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background: var(--gold);
+}
