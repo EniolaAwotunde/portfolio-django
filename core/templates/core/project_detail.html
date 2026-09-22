@@ -1,0 +1,72 @@
+{% extends 'core/base.html' %}
+{% block title %}{{ project.title }}{% endblock %}
+{% block content %}
+<a href="/#work" class="text-link back-link">← Back to Work</a>
+
+<div class="case-study-header">
+    {% if project.cover_image %}
+        <div class="case-study-hero-image">
+            <img src="{{ project.cover_image.url }}" alt="{{ project.title }}">
+        </div>
+    {% endif %}
+
+    
+
+    <h1>{{ project.title }}</h1>
+    {% if project.role %}<p class="featured-role">{{ project.role }}</p>{% endif %}
+    <p class="case-study-intro">{{ project.description }}</p>
+
+    <div class="tech-tags">
+        {% for tech in project.tech_list %}
+            <span class="tech-tag">{{ tech }}</span>
+        {% endfor %}
+    </div>
+</div>
+
+{% if project.problem %}
+<div class="case-study-section">
+    <h3>The Problem</h3>
+    <p>{{ project.problem }}</p>
+</div>
+{% endif %}
+
+{% if project.solution %}
+<div class="case-study-section">
+    <h3>The Solution</h3>
+    <p>{{ project.solution }}</p>
+</div>
+{% endif %}
+
+{% if project.feature_list %}
+<div class="case-study-section">
+    <h3>Key Features</h3>
+    <ul class="feature-list">
+        {% for feature in project.feature_list %}
+            <li>{{ feature }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+{% if project.live_url %}
+<div class="case-study-section">
+    <a href="{{ project.live_url }}" target="_blank" class="text-link">View Live →</a>
+</div>
+{% endif %}
+
+
+
+{% if project.challenges %}
+<div class="case-study-section">
+    <h3>Challenges</h3>
+    <p>{{ project.challenges }}</p>
+</div>
+{% endif %}
+
+{% if project.lessons_learned %}
+<div class="case-study-section">
+    <h3>Lessons Learned</h3>
+    <p>{{ project.lessons_learned }}</p>
+</div>
+{% endif %}
+{% endblock %}

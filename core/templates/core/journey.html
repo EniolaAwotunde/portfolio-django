@@ -1,0 +1,60 @@
+{% extends 'core/base.html' %}
+{% block title %}Journey{% endblock %}
+{% block content %}
+<section class="section-header">
+    
+    <h1>My path so far</h1>
+    <p class="section-subtitle">A snapshot of my professional experience, education, and certifications.</p>
+</section>
+
+{% if experience %}
+<div class="timeline-group">
+    <h3>Experience</h3>
+    <div class="timeline">
+        {% for item in experience %}
+            <div class="timeline-item">
+                <div class="timeline-date">{{ item.date }}</div>
+                <div class="timeline-content">
+                    <h4>{{ item.title }} — {{ item.institution }}</h4>
+                    <p>{{ item.description }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+{% if education %}
+<div class="timeline-group">
+    <h3>Education</h3>
+    <div class="timeline">
+        {% for item in education %}
+            <div class="timeline-item">
+                <div class="timeline-date">{{ item.date }}</div>
+                <div class="timeline-content">
+                    <h4>{{ item.title }}</h4>
+                    <p>{{ item.institution }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+{% if certifications %}
+<div class="timeline-group">
+    <h3>Certifications</h3>
+    <div class="timeline">
+        {% for item in certifications %}
+            <div class="timeline-item">
+                <div class="timeline-date">{{ item.date }}</div>
+                <div class="timeline-content">
+                    <h4>{{ item.title }}</h4>
+                    <p>{{ item.institution }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+{% endblock %}

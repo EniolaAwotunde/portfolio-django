@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+{% block title %}Capabilities{% endblock %}
+{% block content %}
+<section class="section-header">
+    
+    <h1>What I build with</h1>
+    <p class="section-subtitle">Technologies and tools I use to design, develop, and ship practical digital products.</p>
+</section>
+
+<div class="capabilities-grid">
+    {% for category, items in skills.items %}
+        <div class="capability-group">
+            <h3>{{ category }}</h3>
+            <div class="skill-pills">
+                {% for item in items %}
+                    <span class="skill-pill">{{ item }}</span>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

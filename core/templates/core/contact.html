@@ -1,10 +1,26 @@
 {% extends 'core/base.html' %}
 {% block title %}Contact{% endblock %}
 {% block content %}
-    <h1>Contact Me</h1>
+<section class="section-header">
+    
+    <h1>Let's build something together</h1>
+    <p class="section-subtitle">Have a project, opportunity, or idea in mind? Tell me about it and I'll get back to you.</p>
+</section>
+
+<div class="contact-layout">
     <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Send Message</button>
     </form>
+    <aside class="contact-sidebar">
+        <h4>Other Ways to Connect</h4>
+        <p><a href="mailto:Awotundeeniola696@gmail.com" class="text-link">Awotundeeniola696@gmail.com</a><br>Liverpool, England</p>
+        <h4>Let's Connect</h4>
+        <div class="social-links" style="margin-bottom: 20px;">
+            <a href="https://github.com/EniolaAwotunde" target="_blank">GH</a>
+            <a href="https://linkedin.com/in/eniola-awotunde-867a29244" target="_blank">IN</a>
+        </div>
+    </aside>
+</div>
 {% endblock %}
