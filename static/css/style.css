@@ -459,6 +459,46 @@ h1 {
     object-fit: cover;
 }
 
+
+/* ================================
+   TABLET
+   ================================ */
+
+@media (max-width: 900px) {
+
+    .project-cover {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+    }
+
+}
+
+
+/* ================================
+   MOBILE
+   ================================ */
+
+@media (max-width: 600px) {
+
+    .project-cover {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        border-radius: 8px;
+    }
+
+    .project-cover-item {
+        width: 100%;
+    }
+
+    .project-cover-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+    }
+
+}
+
 .featured-main {
     padding: 36px;
 }
