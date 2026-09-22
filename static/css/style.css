@@ -439,43 +439,64 @@ h1 {
     height: 100%;
     object-fit: cover;
 }
-
 .project-cover {
     grid-column: 1 / -1;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
     border-radius: 10px;
     overflow: hidden;
 }
 
-.cover-top-row {
-    display: flex;
-    gap: 6px;
-}
-
-.cover-top-row img {
-    flex: 1;
-    width: 50%;
-    height: 160px;
-    object-fit: cover;
-    display: block;
-}
-
-.cover-bottom img {
+.project-cover-item {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
 }
+
+.project-cover-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+
+/* ================================
+   TABLET
+   ================================ */
+
+@media (max-width: 900px) {
+
+    .project-cover {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+    }
+
+}
+
+
+/* ================================
+   MOBILE
+   ================================ */
 
 @media (max-width: 600px) {
-    .cover-top-row img {
-        height: 110px;
+
+    .project-cover {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        border-radius: 8px;
     }
-    .cover-bottom img {
-        height: 140px;
+
+    .project-cover-item {
+        width: 100%;
     }
+
+    .project-cover-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+    }
+
 }
 
 .featured-main {
@@ -915,44 +936,240 @@ button[type="submit"]:hover {
     font-size: 16px;
 }
 
-/* Mobile responsive */
-@media (max-width: 900px) {
-    .sidebar {
-        display: none;
-    }
-    .mobile-nav-toggle {
-        display: flex;
-    }
-    .page-content {
-        padding: 90px 24px 60px;
-    }
-    .hero {
-        grid-template-columns: 1fr;
-    }
-    .hero-photo {
-        max-width: 260px;
-        margin: 0 auto;
-    }
-    .hero-name {
-        font-size: 34px;
-    }
-    .featured-project {
-        grid-template-columns: 1fr;
-    }
-    .featured-sidebar {
-        border-left: none;
-        border-top: 1px solid var(--border);
-    }
-    .contact-layout {
-        grid-template-columns: 1fr;
-    }
-    .form-row {
-        grid-template-columns: 1fr;
-    }
+/* =========================================================
+   RESPONSIVE DESIGN
+   Desktop styles above remain unchanged
+   ========================================================= */
+
+@media (max-width: 1100px) {
+    .page-content { padding-left: 36px; padding-right: 36px; }
+    .hero { gap: 40px; }
+    .hero-name { font-size: 42px; }
+    .featured-project { padding: 28px; gap: 28px; }
+    .contact-layout { gap: 40px; }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
+    html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
+    body { min-width: 0; }
+    img { max-width: 100%; }
+
+    .sidebar { display: none; }
+    .mobile-nav-toggle { display: flex; }
+
+    .page-content {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        padding: 90px 32px 60px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .hero-photo {
+        width: 100%;
+        max-width: 260px;
+        margin: 0 auto;
+        order: -1;
+    }
+
+    .hero-name { font-size: 40px; line-height: 1.1; }
+    .hero-tagline { max-width: 680px; margin-left: auto; margin-right: auto; }
+
+    .hero-links { justify-content: center; flex-wrap: wrap; }
+
+    .page-section { width: 100%; max-width: 100%; }
+
+    .featured-project {
+        grid-template-columns: 1fr;
+        width: 100%;
+        padding: 28px;
+        gap: 28px;
+    }
+
+    .featured-main { width: 100%; min-width: 0; }
+
+    .featured-sidebar {
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid var(--border);
+        padding-left: 0;
+        padding-top: 24px;
+    }
+
+    .featured-sidebar .primary,
+    .featured-sidebar .full-width { width: 100%; }
+
+    .project-cover {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+        gap: 6px;
+    }
+
+    .project-cover-item { width: 100%; min-width: 0; }
+    .project-cover-item img { width: 100%; height: auto; display: block; }
+
+    .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+    }
+
+    .project-card { min-width: 0; }
+    .project-card-image { width: 100%; }
+
+    .case-study-meta { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .case-study-hero-image { width: 100%; }
+
+    .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .gallery-item { min-width: 0; }
+    .gallery-image { width: 100%; }
+
+    .capabilities-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+    .form-row { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+    html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
+    body { min-width: 0; }
+
+    .page-content {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 82px 20px 50px;
+    }
+
+    .mobile-nav-toggle { top: 18px; right: 18px; z-index: 1001; }
+    .mobile-drawer { width: min(320px, 85vw); max-width: 85vw; }
+
+    h1 { font-size: 32px; }
+    .section-h2 { font-size: 28px; }
+    .section-header { margin-bottom: 40px; }
+    .page-section { padding-top: 90px; margin-top: 40px; }
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 28px;
+        text-align: center;
+        padding: 30px 0 80px;
+    }
+
+    .hero-photo {
+        width: 100%;
+        max-width: 220px;
+        margin: 0 auto;
+        order: -1;
+    }
+
+    .hero-name {
+        font-size: clamp(32px, 10vw, 42px);
+        line-height: 1.08;
+    }
+
+    .hero-tagline {
+        width: 100%;
+        max-width: 100%;
+        font-size: 15px;
+    }
+
+    .hero-links {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .hero-links a { width: 100%; text-align: center; }
+
+    .featured-project {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+        gap: 22px;
+        overflow: hidden;
+    }
+
+    .featured-main { width: 100%; min-width: 0; padding: 24px; }
+
+    .featured-sidebar {
+        width: 100%;
+        min-width: 0;
+        border-left: none;
+        border-top: 1px solid var(--border);
+        padding: 20px 0 0;
+    }
+
+    .featured-sidebar .primary,
+    .featured-sidebar .full-width { width: 100%; max-width: 100%; }
+
+    .project-cover {
+        grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 100%;
+        gap: 6px;
+        border-radius: 8px;
+    }
+
+    .project-cover-item { width: 100%; min-width: 0; }
+    .project-cover-item img { width: 100%; max-width: 100%; height: auto; display: block; }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 100%;
+        gap: 20px;
+    }
+
+    .project-card { width: 100%; max-width: 100%; min-width: 0; }
+    .project-card-image { width: 100%; }
+    .project-card-body { padding: 20px; }
+
+    .case-study-badges { flex-wrap: wrap; }
+    .case-study-meta { grid-template-columns: 1fr; gap: 10px; }
+    .case-study-hero-image { width: 100%; aspect-ratio: 16/10; margin-bottom: 32px; }
+
     .gallery-grid {
         grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 100%;
+        gap: 16px;
     }
+
+    .gallery-item { width: 100%; min-width: 0; }
+    .gallery-image { width: 100%; }
+
+    .capabilities-grid { grid-template-columns: 1fr; gap: 24px; }
+
+    .skill-pills { gap: 8px; }
+    .skill-pill { padding: 7px 13px; font-size: 13px; }
+
+    .contact-layout { grid-template-columns: 1fr; width: 100%; gap: 30px; }
+    .contact-info, .contact-form { width: 100%; min-width: 0; }
+    .form-row { grid-template-columns: 1fr; width: 100%; }
+    form input, form textarea, form select { width: 100%; max-width: 100%; }
+    button[type="submit"] { width: 100%; }
+
+    .empty-state { width: 100%; padding: 28px 20px; }
+    .about-text p { font-size: 15px; }
+}
+
+@media (max-width: 380px) {
+    .page-content { padding-left: 16px; padding-right: 16px; }
+    .hero-name { font-size: 30px; }
+    h1 { font-size: 29px; }
+    .section-h2 { font-size: 25px; }
+    .featured-project { padding: 16px; }
+    .featured-main { padding: 20px; }
+    .project-cover { gap: 4px; }
 }
