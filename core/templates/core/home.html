@@ -6,8 +6,8 @@
 <section id="home" class="hero">
     <div>
         <p class="hero-eyebrow">Software Engineer</p>
-        <h1 class="hero-name">I build software that solves real problems.</h1>
-        <p class="hero-tagline">Full-stack developer focused on building practical web applications and systems that create real impact.</p>
+<h1 class="hero-name">Hi, I'm Eniola.<br>I build digital products that solve real-world problems.</h1>
+<p class="hero-tagline">Full-stack developer building thoughtful, scalable web applications and digital solutions — from ideas and requirements into working products.</p>
         <div class="hero-links">
             <a href="#work" class="primary">Explore My Work</a>
             <a href="#contact" class="secondary">Get In Touch</a>
@@ -20,10 +20,10 @@
 </section>
 
 <section id="work" class="page-section">
-    <div class="section-header">
-        <h2 class="section-h2">Projects I've built</h2>
-        <p class="section-subtitle">A selection of digital products and systems I've worked on.</p>
-    </div>
+   <div class="section-header">
+    <h2 class="section-h2">Selected Work</h2>
+    <p class="section-subtitle">Explore a selection of web applications, digital products, and systems showcasing my work across frontend, backend, and full-stack development.</p>
+</div>
 
     {% if featured %}
     <div class="featured-project">
@@ -33,7 +33,6 @@
             </div>
         {% endif %}
         <div class="featured-main">
-            <div class="featured-label">Flagship Project</div>
             <h3>{{ featured.title }}</h3>
             {% if featured.role %}<p class="featured-role">{{ featured.role }}</p>{% endif %}
             <p class="featured-description">{{ featured.description }}</p>
@@ -69,122 +68,4 @@
                             <img src="{{ project.cover_image.url }}" alt="{{ project.title }}">
                         </div>
                     {% endif %}
-                    <div class="project-card-body">
-                        <h4>{{ project.title }}</h4>
-                        <p>{{ project.description }}</p>
-                        <p class="tech-line">{{ project.tech_stack }}</p>
-                    </div>
-                </a>
-            {% endfor %}
-        </div>
-    </div>
-    {% endif %}
-</section>
-
-<section id="journey" class="page-section">
-    <div class="section-header">
-        <h2 class="section-h2">My path so far</h2>
-        <p class="section-subtitle">A snapshot of my professional experience, education, and certifications.</p>
-    </div>
-
-    {% if experience %}
-    <div class="timeline-group">
-        <h3>Experience</h3>
-        <div class="timeline">
-            {% for item in experience %}
-                <div class="timeline-item">
-                    <div class="timeline-date">{{ item.date }}</div>
-                    <div class="timeline-content">
-                        <h4>{{ item.title }} — {{ item.institution }}</h4>
-                        <p>{{ item.description }}</p>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-    </div>
-    {% endif %}
-
-    {% if education %}
-    <div class="timeline-group">
-        <h3>Education</h3>
-        <div class="timeline">
-            {% for item in education %}
-                <div class="timeline-item">
-                    <div class="timeline-date">{{ item.date }}</div>
-                    <div class="timeline-content">
-                        <h4>{{ item.title }}</h4>
-                        <p>{{ item.institution }}</p>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-    </div>
-    {% endif %}
-
-    {% if certifications %}
-    <div class="timeline-group">
-        <h3>Certifications</h3>
-        <div class="timeline">
-            {% for item in certifications %}
-                <div class="timeline-item">
-                    <div class="timeline-date">{{ item.date }}</div>
-                    <div class="timeline-content">
-                        <h4>{{ item.title }}</h4>
-                        <p>{{ item.institution }}</p>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-    </div>
-    {% endif %}
-</section>
-
-<section id="capabilities" class="page-section">
-    <div class="section-header">
-        <h2 class="section-h2">What I build with</h2>
-        <p class="section-subtitle">Technologies and tools I use to design, develop, and ship practical digital products.</p>
-    </div>
-
-    <div class="capabilities-grid">
-        {% for category, items in skills.items %}
-            <div class="capability-group">
-                <h3>{{ category }}</h3>
-                <div class="skill-pills">
-                    {% for item in items %}
-                        <span class="skill-pill">{{ item }}</span>
-                    {% endfor %}
-                </div>
-            </div>
-        {% endfor %}
-    </div>
-</section>
-
-<section id="contact" class="page-section">
-    <div class="section-header">
-        <h2 class="section-h2">Let's build something together</h2>
-        <p class="section-subtitle">Have a project, opportunity, or idea in mind? Tell me about it and I'll get back to you.</p>
-    </div>
-
-    {% if sent %}
-        <div class="empty-state" style="margin-bottom: 32px;">Thanks — your message has been sent. I'll get back to you soon.</div>
-    {% endif %}
-
-    <div class="contact-layout">
-        <form method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Send Message</button>
-        </form>
-        <aside class="contact-sidebar">
-            <h4>Other Ways to Connect</h4>
-            <p><a href="mailto:Awotundeeniola696@gmail.com" class="text-link">Awotundeeniola696@gmail.com</a><br>Liverpool, England</p>
-            <h4>Let's Connect</h4>
-            <div class="social-links" style="margin-bottom: 20px;">
-                <a href="https://github.com/EniolaAwotunde" target="_blank">GH</a>
-                <a href="https://linkedin.com/in/eniola-awotunde-867a29244" target="_blank">IN</a>
-            </div>
-        </aside>
-    </div>
-</section>
-
-{% endblock %}
+                    <div
