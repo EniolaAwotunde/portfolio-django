@@ -439,6 +439,25 @@ h1 {
     height: 100%;
     object-fit: cover;
 }
+.project-cover {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.project-cover-item {
+    width: 100%;
+}
+
+.project-cover-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
 
 .featured-main {
     padding: 36px;
@@ -648,7 +667,7 @@ h1 {
     margin-bottom: 8px;
 }
 
-/* Gallery (unused for now, kept in case you re-add it) */
+/* Gallery */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -909,6 +928,9 @@ button[type="submit"]:hover {
         grid-template-columns: 1fr;
     }
     .form-row {
+        grid-template-columns: 1fr;
+    }
+    .featured-snapshots {
         grid-template-columns: 1fr;
     }
 }

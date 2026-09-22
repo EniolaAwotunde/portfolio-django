@@ -10,8 +10,6 @@
         </div>
     {% endif %}
 
-    
-
     <h1>{{ project.title }}</h1>
     {% if project.role %}<p class="featured-role">{{ project.role }}</p>{% endif %}
     <p class="case-study-intro">{{ project.description }}</p>
@@ -54,7 +52,30 @@
 </div>
 {% endif %}
 
+{% if project.gallery_images.all %}
+<div class="case-study-section">
+    <h3>Gallery</h3>
+    <div class="gallery-grid">
+        {% for img in project.gallery_images.all %}
+            <div class="gallery-item">
+                <div class="gallery-image">
+                    <img src="{{ img.image.url }}" alt="{{ img.caption }}">
+                </div>
+                {% if img.caption %}<p class="gallery-caption">{{ img.caption }}</p>{% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
 
+<div class="case-study-section">
+    <h3>Technology</h3>
+    <div class="tech-tags">
+        {% for tech in project.tech_list %}
+            <span class="tech-tag">{{ tech }}</span>
+        {% endfor %}
+    </div>
+</div>
 
 {% if project.challenges %}
 <div class="case-study-section">
