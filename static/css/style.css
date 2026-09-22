@@ -439,64 +439,43 @@ h1 {
     height: 100%;
     object-fit: cover;
 }
+
 .project-cover {
     grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
     border-radius: 10px;
     overflow: hidden;
 }
 
-.project-cover-item {
-    width: 100%;
+.cover-top-row {
+    display: flex;
+    gap: 6px;
 }
 
-.project-cover-item img {
-    width: 100%;
-    height: auto;
-    display: block;
+.cover-top-row img {
+    flex: 1;
+    width: 50%;
+    height: 160px;
     object-fit: cover;
+    display: block;
 }
 
-
-/* ================================
-   TABLET
-   ================================ */
-
-@media (max-width: 900px) {
-
-    .project-cover {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 6px;
-    }
-
+.cover-bottom img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
 }
-
-
-/* ================================
-   MOBILE
-   ================================ */
 
 @media (max-width: 600px) {
-
-    .project-cover {
-        grid-template-columns: 1fr;
-        gap: 6px;
-        border-radius: 8px;
+    .cover-top-row img {
+        height: 110px;
     }
-
-    .project-cover-item {
-        width: 100%;
+    .cover-bottom img {
+        height: 140px;
     }
-
-    .project-cover-item img {
-        width: 100%;
-        height: auto;
-        display: block;
-        object-fit: cover;
-    }
-
 }
 
 .featured-main {
@@ -968,9 +947,6 @@ button[type="submit"]:hover {
         grid-template-columns: 1fr;
     }
     .form-row {
-        grid-template-columns: 1fr;
-    }
-    .featured-snapshots {
         grid-template-columns: 1fr;
     }
 }
